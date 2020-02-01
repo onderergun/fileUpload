@@ -1,2 +1,4 @@
 # fileUpload
-Parses through inventory and uploads a file to every device in the inventory
+Parses through inventory downloaded from Arista CloudVision and uploads a file to every Arista device in the inventory
+
+usage:python fileUpload.py --username user --filename filetoupload --inventoryname inventoryfile
