@@ -6,4 +6,4 @@ Paramiko
 
 # Usage
 
-./fileUpload.py --username user --filename file_to_upload --inventoryname inventoryfile.csv
+python fileUpload.py --username user --filename file_to_upload --inventoryname inventoryfile.csv
