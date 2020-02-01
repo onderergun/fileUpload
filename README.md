@@ -1,8 +1,6 @@
 # fileUpload
-Parses through inventory downloaded from Arista CloudVision and uploads a file to every Arista device in the inventory
+Parses through inventory downloaded from Arista CloudVision and uploads the file to /mnt/flash directory of every Arista device in the inventory
 
-# Requires
-Paramiko
 
 # Usage
 
