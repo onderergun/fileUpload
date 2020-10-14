@@ -9,11 +9,14 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--username', required=True)
 parser.add_argument('--filename', required=True)
 parser.add_argument('--inventoryname', required=True)
+parser.add_argument('--targetdir', default="/mnt/flash/")
+
 
 args = parser.parse_args()
 username = args.username
 filename = args.filename
 inventory = args.inventoryname
+targetdir = args.targetdir
 password = getpass()
 
 cwd = os.getcwd()
@@ -28,7 +31,7 @@ def ssh_scp_files(ssh_host, ssh_user, ssh_password, ssh_port, source_volume, des
         scp.put(source_volume, recursive=False, remote_path=destination_volume)
 
 filepathSource = cwd + "/"+ filename
-filepathTarget = "/mnt/flash/" + filename
+filepathTarget = targetdir + filename
 with open(inventory) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     for iter,row in enumerate(csv_reader):
@@ -40,3 +43,4 @@ with open(inventory) as csv_file:
            ssh_host=row[hostIndex]
            print ssh_host
            ssh_scp_files(ssh_host, username, password, "22", filepathSource,filepathTarget)
+     
