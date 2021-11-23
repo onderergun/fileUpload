@@ -41,6 +41,6 @@ with open(inventory) as csv_file:
                    hostIndex=num
        else:
            ssh_host=row[hostIndex]
-           print ssh_host
+           print (ssh_host)
            ssh_scp_files(ssh_host, username, password, "22", filepathSource,filepathTarget)
      
